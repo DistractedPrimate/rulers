@@ -8,3 +8,4 @@
 /tmp/
 debug.txt
 rulers-*.gem
+app/views/test/example_view.html.erb
