@@ -3,6 +3,7 @@ PATH
   specs:
     rulers (0.0.3)
       erubis
+      multi_json
       rack (= 2.2.8.1)
       rackup
       webrick
@@ -12,6 +13,7 @@ GEM
   specs:
     erubis (2.7.0)
     minitest (5.25.4)
+    multi_json (1.15.0)
     rack (2.2.8.1)
     rack-test (2.1.0)
       rack (>= 1.3)

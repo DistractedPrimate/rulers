@@ -40,6 +40,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rackup"
   spec.add_dependency "webrick"
   spec.add_dependency "erubis"
+  spec.add_dependency "multi_json"
   spec.add_development_dependency "rack-test"
   spec.add_development_dependency "minitest"
 end

@@ -24,8 +24,9 @@ class RulersAppTest < Minitest::Test
     File.open(file_path, 'w') do |file|
       file.write('<h1>Hello World!</h1>')
     end
-    
+
     get "test/example_route"
+    puts last_response.inspect
     assert_equal last_response.status, 200
     assert_equal last_response.body, "<h1>Hello World!</h1>"
     
