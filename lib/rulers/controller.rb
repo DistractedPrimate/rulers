@@ -13,6 +13,28 @@ module Rulers
             @env
         end
 
+        def request
+            @request ||= Rack::Request.new(@env)
+        end
+
+        def response(text, status = 200, headers = {})
+            raise "Already responded!" if @response
+            a = [text].flatten
+            @response = Rack::Response.new(a, status, headers)
+        end
+
+        def params
+            request.params
+        end
+
+        def get_response
+            @response
+        end
+
+        def render_response(*args)
+            response(render(*args))
+        end
+
         def render(view, locals = {})
             file = "app/views/#{controller_name}/#{view.to_s}.html.erb"
             template = File.read(file)

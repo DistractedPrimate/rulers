@@ -28,7 +28,12 @@ module Rulers
         status_code = 500
         text = "An error occured: #{e.message}"
       ensure
-        return [status_code, { "Content-Type" => "text/html" }, [text]]
+        r = controller.get_response
+        if r
+          [r.status, r.headers, [r.body].flatten]
+        else
+          [status_code, { "Content-Type" => "text/html" }, [text]]
+        end
       end
     end
   end
